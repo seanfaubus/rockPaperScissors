@@ -60,37 +60,45 @@ function playRound(user, computer) {
 // creating a game function that will consist of 5 rounds!
 
 function game() {
-    let rounds = 0;
+    let rounds = 1;
     let wins = 0;
     let losses = 0;
     let draws = 0;
     // getting user and computer's play for the round...
-    let computerChoice = computerPlay();
-    let playerChoice = userPlay();
     // while loop to loop through 5 rounds..
-    while (rounds < 5) {
+    while (rounds <= 5) {
+        let computerChoice = computerPlay();
+        let playerChoice = userPlay();
         let winner = playRound(playerChoice, computerChoice);
         if (winner === 'You lose!') {
+            console.log("Round: " + rounds);
             losses += 1;
+            console.log(winner);
+            // console.log("Round: " + rounds);
         } else if (winner === 'You win!') {
+            console.log("Round: " + rounds);
             wins += 1;
+            console.log(winner);
+            // console.log("Round: " + rounds);
         } else {
+            console.log("Round: " + rounds);
             draws += 1;
+            console.log(winner);
+            // console.log("Round: " + rounds);
         }
         rounds++;
-        computerChoice = computerPlay();
-        playerChoice = userPlay();
     }
     
     /* determining the winner after 5 rounds*/
-        if (wins > losses && wins > draws) {
-            return ('You are the winner!');
-        } else if (losses > wins && losses > draws) {
-            return ('You lost. Try again!');
-        } else if (draws > wins && draws > losses) {
-            return ('Weird. You draw too much');
-        }
-        
+    if (wins >= losses && wins >= draws) {
+        return ('You are the winner!');
+    } else if (losses > wins && losses > draws) {
+        return ('You lost. Try again!');
+    } else if (draws > wins && draws > losses) {
+        return ('Weird. You draw too much');
     }
-
+        
+}
+// game will cycle through rps 5 times and declare the winner
+// if you win as much or more than you draw or lose, you WIN!!
 console.log(game())
