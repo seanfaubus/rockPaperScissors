@@ -101,7 +101,7 @@ function game() {
 }
 // game will cycle through rps 5 times and declare the winner
 // if you win as much or more than you draw or lose, you WIN!!
-console.log(game());
+// console.log(game());
 
 // creating a function that asks if player wants to play again
 function playAgain() {
@@ -118,4 +118,4 @@ function playAgain() {
     }
 }
 
-console.log(playAgain());
+// console.log(playAgain());
