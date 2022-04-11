@@ -34,7 +34,9 @@ function userPlay() {
 console.log(playerChoice); */
 
 // function to play a game!
-function playRound(user, computer) {
+function playRound() {
+    let user = userPlay();
+    let computer = computerPlay();
     if (user === 'rock' && computer === 'paper') {
         return('You lose!');
     } else if (user === 'rock' && computer === 'scissors') {
@@ -55,7 +57,18 @@ function playRound(user, computer) {
         return('You lose!');
     }
 }
-// console.log(playRound(playerChoice, computerChoice));
+
+// console.log(playRound());
+// function to output result after clicking button to play
+
+const out1 = document.getElementById('output1');
+const btn1 = document.getElementById('hero-btn');
+function outputText() {
+    const txt1 = playRound();
+    out1.innerHTML = txt1;
+}
+btn1.addEventListener('click', outputText);
+
 
 // creating a game function that will consist of 5 rounds!
 
